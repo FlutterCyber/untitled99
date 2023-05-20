@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:untitled99/text_field_page.dart';
 
 class GestureDetectorPage extends StatefulWidget {
   static const String id = "gesture";
@@ -15,12 +16,20 @@ class _GestureDetectorPageState extends State<GestureDetectorPage> {
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.pushReplacementNamed(context, TextFieldPage.id);
+            },
+            icon: Icon(Icons.arrow_forward),
+          ),
+        ],
         title: Text("Gesture detector"),
         centerTitle: true,
       ),
       body: Center(
         child: GestureDetector(
-          onTap: (){
+          onTap: () {
             print("SAPUDGPAIWBDIPAYBF");
           },
           child: Container(
@@ -28,7 +37,7 @@ class _GestureDetectorPageState extends State<GestureDetectorPage> {
             width: 300,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(20),
-              image: DecorationImage(
+              image: const DecorationImage(
                 fit: BoxFit.cover,
                 image: NetworkImage(
                     "https://thumbs.dreamstime.com/b/nice-to-talk-smart-person-indoor-shot-attractive-interesting-caucasian-guy-smiling-broadly-nice-to-112345489.jpg"),
